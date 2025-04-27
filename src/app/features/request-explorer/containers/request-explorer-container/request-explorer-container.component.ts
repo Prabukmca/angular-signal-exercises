@@ -48,7 +48,6 @@ export class RequestExplorerContainerComponent {
     //   const currentRequests = this.requestExplorerSignals.requests$();
     //   console.log('Requests Signal updated:', currentRequests); // Notification logic
     // });
-
   }
 
 
