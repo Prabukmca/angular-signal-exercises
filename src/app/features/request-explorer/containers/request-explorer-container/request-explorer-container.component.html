@@ -1,0 +1,20 @@
+<h1>Request Explorer</h1>
+<button (click)="copyRequest()">Copy Request</button>
+<button (click)="deleteRequest()">Delete Request</button>
+
+<div>
+  @if (populationData().length) {
+    <div>
+      <h2>Population Data</h2>
+      <ul>
+        <li *ngFor="let data of populationData()">
+          {{ data.Nation}}
+        </li>
+      </ul>
+    </div>
+  }
+</div>
+
+<!-- <app-request-explorer [request$]="request$" [requestSignal]="requestSignal"></app-request-explorer> -->
+
+<router-outlet></router-outlet>

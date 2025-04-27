@@ -1,0 +1,21 @@
+<div>
+  <h1>Counter: {{ count() }}</h1>
+  <button (click)="increment()">Increment</button>
+  <button (click)="decrement()">Decrement</button>
+</div>
+
+<!-- <div  *ngIf="request$ | async as request">
+  <div>
+    <h3>Request Details - Observable</h3>
+    <pre>{{ request | json }}</pre>
+  </div>
+
+</div> -->
+
+<div>
+  <div>
+    <h3>Request Details - Signal</h3>
+    <pre>{{ requestSignal() | json }}</pre>
+  </div>
+
+</div>
