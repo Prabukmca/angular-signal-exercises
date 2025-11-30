@@ -7,9 +7,11 @@
     <div>
       <h2>Population Data</h2>
       <ul>
-        <li *ngFor="let data of populationData()">
-          {{ data.Nation}}
-        </li>
+        @for (data of populationData(); track data) {
+          <li>
+            {{ data.Nation}}
+          </li>
+        }
       </ul>
     </div>
   }

@@ -1,23 +1,20 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, Signal, signal, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { RequestExplorerComponent } from '../../components/request-explorer/request-explorer.component';
 import { Router, RouterOutlet } from '@angular/router';
-import { CommonModule, LocationStrategy } from '@angular/common';
+import { LocationStrategy } from '@angular/common';
 import { RequestExplorerService } from '../../services/request-explorer.service';
 import { RequestExplorerFacadeService } from '../../facades/request-explorer-facade.service';
 import { RequestExplorerStoreService } from '../../stores/request-explorer-store.service';
 import { EMPTY, Observable } from 'rxjs';
 import { NationData, RequestExplorer } from '@request-explorer-models/request-explorer';
 import { RequestExplorerSignals } from '../../signals/request-explorer.signals';
-import { HttpClient, httpResource } from '@angular/common/http';
 import { RequestExplorerHttpResourceService } from '../../signals/request-explorer-http-resource.service';
 
 @Component({
   selector: 'app-request-explorer-container',
   imports: [
-    RouterOutlet,
-    RequestExplorerComponent,
-    CommonModule
-  ],
+    RouterOutlet
+],
   templateUrl: './request-explorer-container.component.html',
   styleUrl: './request-explorer-container.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
