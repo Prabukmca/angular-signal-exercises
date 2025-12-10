@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { email, Field, form, required, submit } from '@angular/forms/signals';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -10,9 +11,11 @@ import { email, Field, form, required, submit } from '@angular/forms/signals';
 })
 export class LoginComponent {
 
+    constructor(private router: Router) {}
+
     loginModel = signal<LoginData>({
-        email: '',
-        password: '',
+        email: 'prabuk@example.com',
+        password: 'test1234',
         rememberMe: false,
     });
 
@@ -28,7 +31,10 @@ export class LoginComponent {
         submit(this.loginForm, async () => {
             const credentials = this.loginModel();
             console.log('Login submitted with credentials:', credentials);
-            // Handle authentication logic here
+
+            if(credentials.email !== '' && credentials.password !== '') {
+                this.router.navigate(['/chat/box']);
+            }
 
         })
     }

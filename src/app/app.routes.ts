@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () => import('./features/auth/auth-routing.module').then(m => m.AuthRoutingModule),
   },
   {
+    path: 'chat',
+    title: 'Chat',
+    loadChildren: () => import('./features/chat/chat-routing.module').then(m => m.ChatRoutingModule),
+  },
+  {
     path: 'request-explorer',
     title: 'Request Explorer',
     loadChildren: () => import('./features/request-explorer/request-explorer.routes').then(m => m.requestExplorerRoutes),

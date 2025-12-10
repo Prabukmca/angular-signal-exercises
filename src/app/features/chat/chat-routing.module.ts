@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'box',
         pathMatch: 'full'
     },
     {
-        path: 'login',
-        loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent),
-        title: 'Login'
+        path: 'box',
+        loadComponent: () => import('./components/chat-box/chat-box.component').then(m => m.ChatBoxComponent),
+        title: 'Chat Box'
     }
 ];
 
@@ -19,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthRoutingModule { }
+export class ChatRoutingModule { }
